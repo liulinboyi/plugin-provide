@@ -1,0 +1,13 @@
+{
+  "name": "plugin-provide",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"test\""
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.46.0"
+  }
+}
