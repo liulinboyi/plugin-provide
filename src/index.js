@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path = require('path')
 
 module.exports = ({ context, log, onGetWebpackConfig }, options = {}) => {
   const { command } = context;
@@ -14,5 +15,15 @@ module.exports = ({ context, log, onGetWebpackConfig }, options = {}) => {
       .use(webpack.ProvidePlugin, [
         params
       ]);
+
+    config.module
+      .rule('json')
+      .test(/\.json$/)
+      .use('json')
+      .loader(path.resolve(__dirname, '../loader/json-loader.js'))
+      .options({
+      });
+    // log.info(config.toString())
   });
+
 }
